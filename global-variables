@@ -9,5 +9,10 @@ node {
   echo "Jenkins Home ${env.JENKINS_HOME}"
   echo "Jenkins URL ${env.JENKINS_URL}"
   echo "JOB Name ${env.JOB_NAME}"
+// To get the commit_id, commited branch and previous commit_id 
+def scmVars=checkout scm
+                echo 'scm : the commit id is ' +scmVars.GIT_COMMIT
+                echo 'scm : the commit branch  is ' +scmVars.GIT_BRANCH
+                echo 'scm : the previous commit id is ' +scmVars.GIT_PREVIOUS_COMMIT
   
 }
